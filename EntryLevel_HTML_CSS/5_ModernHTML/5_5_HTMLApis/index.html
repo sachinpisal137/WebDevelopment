@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .location {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .weather {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Weather Forecast Application</h1>
+
+        <div class="location">
+            <h2 id="location">Detecting Location...</h2>
+        </div>
+
+        <div class="weather">
+            <h2 id="temperature">Loading...</h2>
+        </div>
+    </div>
+
+    <script>
+        // Get user's location using Geolocation API
+        navigator.geolocation.getCurrentPosition(function (position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+
+            // Display user's location
+            var locationElement = document.getElementById('location');
+            locationElement.textContent = 'Your Location: ' + latitude + ', ' + longitude;
+
+            // Fetch weather data based on coordinates (using OpenWeatherMap API as example)
+            var apiKey = '16f86ed2434d5fc633b484d09b8d865c';
+            var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&appid=' + apiKey + '&units=metric';
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    var temperatureElement = document.getElementById('temperature');
+                    temperatureElement.textContent = 'Current Temperature: ' + data.main.temp + '°C';
+                })
+                .catch(error => {
+                    console.log('Error fetching weather data:', error);
+                    var temperatureElement = document.getElementById('temperature');
+                    temperatureElement.textContent = 'Error fetching weather data';
+                });
+        }, function (error) {
+            console.log('Error getting user location:', error);
+            var locationElement = document.getElementById('location');
+            locationElement.textContent = 'Unable to retrieve your location';
+        });
+    </script>
+</body>
+
+</html>

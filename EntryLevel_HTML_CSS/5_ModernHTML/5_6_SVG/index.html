@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Example: Art Gallery Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin: 0;
+            text-align: center;
+        }
+
+        .logo-svg {
+            width: 200px;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .artwork-svg {
+            width: 300px;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Art Gallery Website</h1>
+
+    <h2>SVG for Scalable Vector Graphics</h2>
+
+    <h3>Art Gallery Logo</h3>
+    <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" fill="skyblue" />
+        <text x="30" y="55" font-family="Arial" font-size="20" fill="white">Art</text>
+        <text x="45" y="75" font-family="Arial" font-size="20" fill="white">Gallery</text>
+    </svg>
+
+    <h3>Artwork Illustration</h3>
+    <svg class="artwork-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+        <rect x="50" y="50" width="100" height="100" fill="lightgreen" />
+        <circle cx="100" cy="100" r="40" fill="orange" />
+        <polygon points="150,50 180,100 120,100" fill="pink" />
+    </svg>
+
+    <p>SVG graphics are scalable without losing quality, making them ideal for high-resolution displays and responsive
+        designs.</p>
+</body>
+
+</html>

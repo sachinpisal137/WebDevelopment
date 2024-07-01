@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Example</title>
+</head>
+
+<body>
+    <h1>Beautiful Landscapes</h1>
+    <p>Check out this beautiful mountain landscape:</p>
+
+    <img src="popcornsmall.png" srcset="
+            popcornsmall.png 480w, 
+            popcornmedium.png 800w, 
+            popcornlarge.png 1200w
+        " sizes="
+            (max-width: 600px) 480px, 
+            (max-width: 900px) 800px, 
+            1200px
+        " alt="A breathtaking view of a mountain landscape during sunset" width="1200" height="800">
+</body>
+
+</html>

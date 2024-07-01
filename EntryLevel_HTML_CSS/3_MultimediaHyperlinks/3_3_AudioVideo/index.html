@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Band Multimedia Showcase</title>
+</head>
+
+<body>
+    <h1>Welcome to Our Band's Official Website</h1>
+    <h2>Listen to Our Latest Song</h2>
+
+    <!-- Audio Element -->
+    <audio controls preload="auto">
+        <source src="happybirthday.mp4" type="audio/mpeg">
+        <!-- <source src="audio/song.ogg" type="audio/ogg"> -->
+        Your browser does not support the audio element.
+    </audio>
+
+    <h2>Watch Our Latest Music Video</h2>
+
+    <!-- Video Element -->
+    <video controls width="640" height="360" poster="images/video-poster.jpg" preload="auto">
+        <source src="Thankyou.mp4" type="video/mp4">
+        <!-- <source src="video/music-video.webm" type="video/webm"> -->
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Responsive Video Example with Media Query -->
+    <style>
+        video {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+
+</body>
+
+</html>

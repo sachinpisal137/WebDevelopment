@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Feedback Form</title>
+</head>
+
+<body>
+    <h2>Restaurant Feedback Form</h2>
+    <form action="/submit_feedback" method="post">
+        <!-- Dining Experience Dropdown -->
+        <label for="dining-experience">Dining Experience:</label>
+        <select id="dining-experience" name="diningExperience" required>
+            <option value="" disabled selected>Select your option</option>
+            <option value="dine-in">Dine-In</option>
+            <option value="takeout">Takeout</option>
+            <option value="delivery">Delivery</option>
+        </select>
+        <br><br>
+
+        <!-- Food Quality Rating Dropdown -->
+        <label for="food-quality">Food Quality Rating:</label>
+        <select id="food-quality" name="foodQuality" required>
+            <option value="" disabled selected>Select your rating</option>
+            <option value="excellent">Excellent</option>
+            <option value="good">Good</option>
+            <option value="average">Average</option>
+            <option value="poor">Poor</option>
+        </select>
+        <br><br>
+
+        <!-- Service Quality Rating Dropdown -->
+        <label for="service-quality">Service Quality Rating:</label>
+        <select id="service-quality" name="serviceQuality" required>
+            <option value="" disabled selected>Select your rating</option>
+            <option value="excellent">Excellent</option>
+            <option value="good">Good</option>
+            <option value="average">Average</option>
+            <option value="poor">Poor</option>
+        </select>
+        <br><br>
+
+        <!-- Form Actions -->
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+
+</html>

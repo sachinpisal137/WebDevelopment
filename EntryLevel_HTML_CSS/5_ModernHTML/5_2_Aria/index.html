@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Accordion Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .accordion-item {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .accordion-question {
+            background-color: #f0f0f0;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .accordion-answer {
+            padding: 10px;
+            display: none;
+        }
+
+        .accordion-answer.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="accordion-item" role="presentation">
+        <div class="accordion-question" role="button" aria-expanded="false" aria-controls="answer1"
+            onclick="toggleAccordion(this)">
+            How do I create an account?
+        </div>
+        <div class="accordion-answer" id="answer1" aria-hidden="true">
+            <p>Creating an account is easy! Visit our website and click on the 'Sign Up' button. Fill in your details
+                and follow the prompts to complete the registration process.</p>
+        </div>
+    </div>
+
+    <div class="accordion-item" role="presentation">
+        <div class="accordion-question" role="button" aria-expanded="false" aria-controls="answer2"
+            onclick="toggleAccordion(this)">
+            Can I change my password?
+        </div>
+        <div class="accordion-answer" id="answer2" aria-hidden="true">
+            <p>Yes, you can change your password anytime by logging into your account, navigating to the settings or
+                profile section, and selecting the option to change your password.</p>
+        </div>
+    </div>
+
+    <div class="accordion-item" role="presentation">
+        <div class="accordion-question" role="button" aria-expanded="false" aria-controls="answer3"
+            onclick="toggleAccordion(this)">
+            What payment methods do you accept?
+        </div>
+        <div class="accordion-answer" id="answer3" aria-hidden="true">
+            <p>We accept major credit cards, PayPal, and bank transfers. You can choose your preferred payment method
+                during the checkout process.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleAccordion(element) {
+            var answerId = element.getAttribute('aria-controls');
+            var answer = document.getElementById(answerId);
+
+            if (element.getAttribute('aria-expanded') === 'true') {
+                element.setAttribute('aria-expanded', 'false');
+                answer.setAttribute('aria-hidden', 'true');
+                answer.classList.remove('active');
+            } else {
+                element.setAttribute('aria-expanded', 'true');
+                answer.setAttribute('aria-hidden', 'false');
+                answer.classList.add('active');
+            }
+        }
+    </script>
+</body>
+
+</html>

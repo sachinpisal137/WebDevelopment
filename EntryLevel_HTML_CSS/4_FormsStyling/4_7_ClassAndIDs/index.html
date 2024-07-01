@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Blog</title>
+    <style>
+        /* Styling using IDs */
+        #header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        #footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Styling using Classes */
+        .article {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .article-title {
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .article-content {
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header with ID -->
+    <div id="header">
+        <h1>My Personal Blog</h1>
+        <nav>
+            <a href="#home" style="color: white;">Home</a> |
+            <a href="#about" style="color: white;">About</a> |
+            <a href="#contact" style="color: white;">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Main Content with Articles -->
+    <div class="article">
+        <h2 class="article-title">First Article</h2>
+        <p class="article-content">This is the content of the first article. It's a great read!</p>
+    </div>
+    <div class="article">
+        <h2 class="article-title">Second Article</h2>
+        <p class="article-content">This is the content of the second article. It's also a great read!</p>
+    </div>
+
+    <!-- Footer with ID -->
+    <div id="footer">
+        &copy; 2024 My Personal Blog. All rights reserved.
+    </div>
+</body>
+
+</html>
